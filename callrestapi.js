@@ -1,5 +1,5 @@
 // Cambia esta URL a la que tengas de tu backend desplegado en Render
-const API_URL = "https://pg-restapi-kcis.onrender.com";
+const API_URL = "https://pg-restapi-kcis.onrender.com/api/users";
 
 // Función para obtener usuarios
 async function getUsers() {
