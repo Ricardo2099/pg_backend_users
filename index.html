@@ -3,21 +3,79 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Frontend REST API</title>
+  <title>Lista de Usuarios</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f5f5f5;
+    }
+    h1, h2 {
+      color: #333;
+    }
+    .form-container, .list-container {
+      background-color: #fff;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    input[type="text"], input[type="number"] {
+      padding: 8px;
+      margin: 5px 5px 10px 0;
+      width: 200px;
+    }
+    button {
+      padding: 8px 12px;
+      margin: 5px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    li {
+      background-color: #fff;
+      margin: 8px 0;
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .user-info {
+      flex-grow: 1;
+    }
+  </style>
+  <script src="callrestapi.js" defer></script>
 </head>
 <body>
 
   <h1>Lista de Usuarios</h1>
-  <button onclick="getUsers()">Obtener usuarios</button>
-  <ul id="userList"></ul>
 
-  <h2>Agregar Usuario</h2>
-  <input type="text" id="name" placeholder="Nombre">
-  <input type="text" id="email" placeholder="Email">
-  <input type="number" id="age" placeholder="Edad">
-  <input type="text" id="comments" placeholder="Comentarios">
-  <button onclick="createUser()">Crear Usuario</button>
+  <div class="form-container">
+    <h2>Agregar Usuario</h2>
+    <input type="text" id="name" placeholder="Nombre">
+    <input type="text" id="email" placeholder="Email">
+    <input type="number" id="age" placeholder="Edad">
+    <input type="text" id="comments" placeholder="Comentarios">
+    <br>
+    <button onclick="createUser()">Crear usuario</button>
+    <button onclick="getUsers()">Obtener usuarios</button>
+  </div>
 
-  <script src="callrestapi.js"></script>
+  <div class="list-container">
+    <ul id="userList">
+      <!-- Lista de usuarios aparecerá aquí -->
+    </ul>
+  </div>
+
 </body>
 </html>
