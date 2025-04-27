@@ -7,42 +7,48 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      margin: 20px;
-      background-color: #f5f5f5;
+      margin: 0;
+      padding: 20px;
+      background-color: #d0f0f7; /* Fondo celeste claro */
     }
     h1, h2 {
       color: #333;
+      text-align: center;
     }
     .form-container, .list-container {
-      background-color: #fff;
+      background-color: #ffffff;
       padding: 20px;
-      margin-bottom: 20px;
+      margin: 20px auto;
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      max-width: 600px;
     }
     input[type="text"], input[type="number"] {
       padding: 8px;
       margin: 5px 5px 10px 0;
-      width: 200px;
+      width: calc(50% - 12px);
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 4px;
     }
     button {
-      padding: 8px 12px;
+      padding: 10px 16px;
       margin: 5px;
-      background-color: #4CAF50;
+      background-color: #007BFF;
       color: white;
       border: none;
       border-radius: 4px;
       cursor: pointer;
     }
     button:hover {
-      background-color: #45a049;
+      background-color: #0056b3;
     }
     ul {
       list-style-type: none;
       padding: 0;
     }
     li {
-      background-color: #fff;
+      background-color: #ffffff;
       margin: 8px 0;
       padding: 10px;
       border-bottom: 1px solid #ddd;
@@ -52,6 +58,7 @@
     }
     .user-info {
       flex-grow: 1;
+      color: #333;
     }
   </style>
   <script src="callrestapi.js" defer></script>
@@ -67,8 +74,8 @@
     <input type="number" id="age" placeholder="Edad">
     <input type="text" id="comments" placeholder="Comentarios">
     <br>
-    <button onclick="createUser()">Crear usuario</button>
-    <button onclick="getUsers()">Obtener usuarios</button>
+    <button onclick="createUser()">POST user</button>
+    <button onclick="getUsers()">GET users</button>
   </div>
 
   <div class="list-container">
